@@ -4,7 +4,7 @@
 ・現在地の取得
 ・位置の検索
 
-![Simulator Screenshot - iPhone 15 Pro - 2024-01-17 at 22 20 16](https://github.com/mzunohkaru/SwiftUI-Sample-MapKit/assets/99012157/a8aca31d-9f00-4f0c-8151-31146ff19a63)
+![297392408-a8aca31d-9f00-4f0c-8151-31146ff19a63](https://github.com/mzunohkaru/SwiftUI-Sample-MapKit/assets/99012157/d70eb2ea-433c-4cc4-9dfb-6ec3594ea9c6)
 
 
 ・位置の詳細
