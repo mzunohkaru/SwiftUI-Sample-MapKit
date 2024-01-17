@@ -2,23 +2,30 @@
 
 
 ・現在地の取得
+
+![Simulator Screenshot - iPhone 15 Pro - 2024-01-18 at 00 26 31](https://github.com/mzunohkaru/SwiftUI-Sample-MapKit/assets/99012157/78890f0a-05d0-448d-a3d4-6689bae75084)
+
+
 ・位置の検索
 
-![297392408-a8aca31d-9f00-4f0c-8151-31146ff19a63](https://github.com/mzunohkaru/SwiftUI-Sample-MapKit/assets/99012157/d70eb2ea-433c-4cc4-9dfb-6ec3594ea9c6)
+![Simulator Screenshot - iPhone 15 Pro - 2024-01-18 at 00 26 52](https://github.com/mzunohkaru/SwiftUI-Sample-MapKit/assets/99012157/60e2e0d1-2f8b-4dda-ab0c-58bd1eaf059b)
 
 
-・位置の詳細
-・Look　Around　ビュー
-・IOS標準のマップアプリへの遷移
+・Look Around機能
 
-![Simulator Screenshot - iPhone 15 Pro - 2024-01-17 at 22 20 28](https://github.com/mzunohkaru/SwiftUI-Sample-MapKit/assets/99012157/89aed532-de3b-46bb-b191-55d084bcc2a2)
+![Simulator Screenshot - iPhone 15 Pro - 2024-01-18 at 00 26 57](https://github.com/mzunohkaru/SwiftUI-Sample-MapKit/assets/99012157/0a2960ae-3ce8-40a7-a98d-0bd2c25fb7da)
 
 
 ・ルート検索
 
-![Simulator Screenshot - iPhone 15 Pro - 2024-01-17 at 22 20 39](https://github.com/mzunohkaru/SwiftUI-Sample-MapKit/assets/99012157/23150895-c566-4fb1-b65a-d7e52010a80b)
+![Simulator Screenshot - iPhone 15 Pro - 2024-01-18 at 00 27 11](https://github.com/mzunohkaru/SwiftUI-Sample-MapKit/assets/99012157/9b59342d-ba03-4bc7-ab49-d4ebef85a21e)
 
 
-・マップスタイル
+・位置の検索
 
-![Simulator Screenshot - iPhone 15 Pro - 2024-01-17 at 22 20 46](https://github.com/mzunohkaru/SwiftUI-Sample-MapKit/assets/99012157/e2eb325c-3ff4-4868-8aca-94be2ad22c67)
+![Simulator Screenshot - iPhone 15 Pro - 2024-01-18 at 00 28 21](https://github.com/mzunohkaru/SwiftUI-Sample-MapKit/assets/99012157/dcaf45ea-e9a8-472b-b567-acdaf696fe5e)
+
+
+・マップスタイルの変更
+
+![Simulator Screenshot - iPhone 15 Pro - 2024-01-18 at 00 28 37](https://github.com/mzunohkaru/SwiftUI-Sample-MapKit/assets/99012157/c8e31c78-1235-418e-8950-44673ffc9eca)
