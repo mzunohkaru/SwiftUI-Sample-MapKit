@@ -9,15 +9,17 @@ import Foundation
 import CoreLocation
 
 // 位置情報へのアクセス許可の状態が変更されたときに通知を受け取ります
-class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+class LocationManager: NSObject, ObservableObject {
     
     private let locationManager = CLLocationManager()
+    // ユーザーの現在地を保持する変数
+    @Published var location: CLLocation?
     
     override init() {
         print("LocationManagerを初期化")
         super.init()
         requestPermission() // 位置情報へのアクセス許可をリクエスト
-        locationManager.startUpdatingLocation()
+        locationManager.startUpdatingLocation() // デバイスの位置情報の取得を開始
     }
     
     private func requestPermission() {
@@ -56,6 +58,19 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             print("すでに許可されています")
         default:
             print("未知の認証ステータス")
+        }
+    }
+}
+
+// 位置情報が更新されたときに呼び出されるメソッド
+extension LocationManager: CLLocationManagerDelegate {
+    // 位置情報が更新されるたびに自動的に呼び出され、新しい位置情報をlocations配列として受け取ります
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        Task {
+            // 配列から最新の位置情報を取得
+            guard let location = locations.last else { return }
+            // 最新の位置情報を保存
+            self.location = location
         }
     }
 }

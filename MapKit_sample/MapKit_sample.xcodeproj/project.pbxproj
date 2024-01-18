@@ -296,6 +296,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MapKit_sample/Preview Content\"";
+				DEVELOPMENT_TEAM = Q6F76GHG5T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "このアプリはあなたの位置情報をマップに表示する必要があります";
@@ -326,6 +327,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MapKit_sample/Preview Content\"";
+				DEVELOPMENT_TEAM = Q6F76GHG5T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "このアプリはあなたの位置情報をマップに表示する必要があります";

@@ -42,21 +42,21 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             Map(position: $cameraPosition, selection: $mapSelection, scope: locationSpace) {
-                //            Annotation("My location", coordinate: .userLocation) {
-                //                ZStack{
-                //                    Circle()
-                //                        .frame(width: 100, height: 100)
-                //                        .foregroundStyle(.blue.opacity(0.25))
-                //
-                //                    Circle()
-                //                        .frame(width: 20, height: 20)
-                //                        .foregroundStyle(.white)
-                //
-                //                    Circle()
-                //                        .frame(width: 12, height: 12)
-                //                        .foregroundStyle(.blue)
-                //                }
-                //            }
+                Annotation("My location", coordinate: .userLocation) {
+                    ZStack{
+                        Circle()
+                            .frame(width: 100, height: 100)
+                            .foregroundStyle(.blue.opacity(0.25))
+                        
+                        Circle()
+                            .frame(width: 20, height: 20)
+                            .foregroundStyle(.white)
+                        
+                        Circle()
+                            .frame(width: 12, height: 12)
+                            .foregroundStyle(.blue)
+                    }
+                }
                 
                 // ユーザーの位置情報
                 UserAnnotation()
@@ -140,7 +140,12 @@ struct ContentView: View {
                     showDetails = false
                     // アニメーションを伴って地図のカメラ位置をユーザーの領域（userRegion）に戻します
                     withAnimation(.snappy) {
-                        cameraPosition = .region(.userRegion)
+                        // 開発者が設定した位置にカメラの位置を移動させる
+                        // cameraPosition = .region(.userRegion)
+                        // ユーザーの現在地
+                        let currentLocation = locationManager.location
+                        // ユーザーの現在地にカメラの位置を移動させる
+                        cameraPosition = .region(MKCoordinateRegion(center: currentLocation!.coordinate, latitudinalMeters: 10000, longitudinalMeters: 10000))
                     }
                 }
             }
@@ -238,16 +243,20 @@ extension ContentView {
                 // ルートの目的地（routeDestination）はユーザーが地図上で選択した場所（mapSelection）に設定
                 routeDestination = mapSelection
                 
-                // アニメーションを適用
-                withAnimation(.snappy) {
-                    // ルートが表示
-                    routeDisplaying = true
-                    // 詳細情報が非表示
-                    showDetails = false
-                    
-                    if let rect = route?.polyline.boundingMapRect, routeDisplaying {
-                        // カメラの位置がルートに合わせて更新
-                        cameraPosition = .rect(rect)
+                ///非同期タスクは、通常、バックグラウンドスレッドで実行されますが、UIの更新はメインスレッドで行う必要があります。したがって、UIの更新を含む非同期タスクはメインスレッドで実行する必要があります。
+                // UIの更新をメインスレッドで行う
+                DispatchQueue.main.async {
+                    // アニメーションを適用
+                    withAnimation(.snappy) {
+                        // ルートが表示
+                        routeDisplaying = true
+                        // 詳細情報が非表示
+                        showDetails = false
+                        
+                        if let rect = route?.polyline.boundingMapRect, routeDisplaying {
+                            // カメラの位置がルートに合わせて更新
+                            cameraPosition = .rect(rect)
+                        }
                     }
                 }
             }
